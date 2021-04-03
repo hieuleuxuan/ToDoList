@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - To Do List UI</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+<link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<div class="app-container" id="taskList">
+  <h1 class="app-header">TO DO LIST</h1>
+  <div class="add-task">
+    <input type="text" autocomplete="off" placeholder="Add New Task" v-model="tasks.name" @keyup.enter="newItem" class="task-input">
+		<input type="submit" value="" class="submit-task" @click="newItem" title="Add Task">
+  </div>
+  <ul class="task-list">
+		<li class="task-list-item" v-for="task in tasks">
+			<label class="task-list-item-label">
+        <input type="checkbox">
+				<span>{{task.name}}</span>
+			</label>
+			<span @click="delItem(task)" class="delete-btn" title="Delete Task">{{task.del}}</span>
+		</li>
+	</ul>
+</div>
+<!-- partial -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.11/vue.min.js'></script><script  src="./script.js"></script>
+
+</body>
+</html>
